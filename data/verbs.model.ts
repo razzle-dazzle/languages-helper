@@ -5,7 +5,7 @@ export type LanguageDefinition = {
 }
 export type Verbs = {
   id: string;
-  verb: {
+  forms: {
     infinitive: LanguageDefinition;
     gerund: LanguageDefinition;
     participle: LanguageDefinition;

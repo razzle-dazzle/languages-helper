@@ -1,5 +1,6 @@
 import myVerbsService from "@/services/verbs.service";
-import VerbBlock from './VerbBlock';
+import VerbBlock from "./VerbBlock";
+import Link from "next/link";
 // import { classnames } from "tailwindcss-classnames";
 
 // export async function generateStaticParams() {
@@ -8,18 +9,34 @@ import VerbBlock from './VerbBlock';
 // }
 
 export default function Page() {
-  const data = myVerbsService.getProjects();
+  const data = myVerbsService.getVerbs();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="max-w-[1600px] w-full py-12 border">
-        <div className="grid grid-cols-5 justify-center align-middle">
+      <h1 className='text-5xl font-semibold text-black text-center mt-12'>Catalan Verbs</h1>
+      <div className="max-w-[1800px] w-full border shadow-lg my-12">
+        <div className="grid grid-cols-4 justify-center align-middle">
           {data.map((verb, key) => {
-            return <VerbBlock verb={verb} key={key} col={key % 5} row={(key % 10) >= 5 ? 1 : 0}></VerbBlock>;
+            const col = key % 4;
+            const row = key % (4 * 2) >= 4 ? 1 : 0;
+            const verbPage = verb.id;
+            const href = `/verbs/${verbPage}`;
+
+            return (
+              <Link href={href} key={key}>
+                <VerbBlock
+                  forms={verb.forms}
+                  id={verb.id}
+                  tense={verb.indicative.present}
+                  col={col}
+                  row={row}
+                  showInfinitiveTitle
+                ></VerbBlock>
+              </Link>
+            );
           })}
         </div>
       </div>
     </main>
   );
 }
-

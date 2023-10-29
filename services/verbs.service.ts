@@ -3,10 +3,12 @@ import { Verbs } from '@/data/verbs.model';
 
 
 class VerbsService {
-  getProjects(): Verbs[] {
+  getVerbs(): Verbs[] {
     return catalanVerbs;
   }
-  
+  getVerbById(id: Verbs['id']): Verbs | undefined {
+    return catalanVerbs.find(v => v.id === id)
+  }
 }
 
 const myVerbsService = new VerbsService();
