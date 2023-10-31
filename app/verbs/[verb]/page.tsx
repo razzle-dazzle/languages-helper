@@ -13,18 +13,19 @@ const NotFound = () => <h2>Verb not found</h2>
 export default function Page({ params }: { params: { verb: string; } }) {
   const { verb: _verb } = params;
   const data = myVerbsService.getVerbById(_verb);
+  const gridClasses = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center align-middle";
   
   if (!data) {
     return <NotFound></NotFound>
   }
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <h1 className='text-5xl font-semibold text-black text-center mt-12'>{data.forms.infinitive.ca}, {data.forms.infinitive.es}, {data.forms.infinitive.en}</h1>
+      <h1 className='text-5xl font-semibold text-black dark:text-white text-center mt-12'>Verb: {data.forms.infinitive.ca}, {data.forms.infinitive.es}, {data.forms.infinitive.en}</h1>
       
       <div className="max-w-[1800px] w-full border shadow-lg my-12">
 
         <Title>Indicative Mood</Title>
-        <div className="grid grid-cols-4 justify-center align-middle">
+        <div className={gridClasses}>
           <VerbBlock showTenseTitle tenseTitle='Present' tense={data.indicative.present} forms={data.forms} id={data.id} row={0}></VerbBlock>
           <VerbBlock showTenseTitle tenseTitle='Imperfect' tense={data.indicative.imperfect} forms={data.forms} id={data.id} row={0}></VerbBlock>
           <VerbBlock showTenseTitle tenseTitle='Periphrastic' tense={data.indicative.periphrastic} forms={data.forms} id={data.id} row={0}></VerbBlock>
@@ -37,7 +38,7 @@ export default function Page({ params }: { params: { verb: string; } }) {
         </div>
 
         <Title>Subjunctive Mood</Title>
-        <div className="grid grid-cols-4 justify-center align-middle">
+        <div className={gridClasses}>
           <VerbBlock showTenseTitle tenseTitle='Present' tense={data.subjunctive.present} forms={data.forms} id={data.id} row={0}></VerbBlock>
           <VerbBlock showTenseTitle tenseTitle='Imperfect' tense={data.subjunctive.imperfect} forms={data.forms} id={data.id} row={0}></VerbBlock>
           <VerbBlock showTenseTitle tenseTitle='Perfect' tense={data.subjunctive.perfect} forms={data.forms} id={data.id} row={0}></VerbBlock>
@@ -45,13 +46,13 @@ export default function Page({ params }: { params: { verb: string; } }) {
         </div>
 
         <Title>Imperative Mood</Title>
-        <div className="grid grid-cols-4 justify-center align-middle">
+        <div className={gridClasses}>
           <VerbBlock showTenseTitle tenseTitle='Present' tense={data.imperative.present} forms={data.forms} id={data.id} row={0}></VerbBlock>
           
         </div>
       </div>
-      <div className='text-black my-4'>
-        <Link className='text-xl' href={'/verbs'}>&laquo; Back</Link>
+      <div className='text-black my-2 mb-24'>
+        <Link className='text-xl text-black dark:text-white' href={'/verbs'}>&laquo; Back</Link>
       </div>
     </main>
   );
@@ -59,6 +60,6 @@ export default function Page({ params }: { params: { verb: string; } }) {
 
 const Title = ({children}: PropsWithChildren<{}>) => {
   return (
-    <h2 className='text-2xl font-semibold my-4 mt-8 text-black text-center'>{children}</h2>
+    <h2 className='text-2xl font-semibold my-4 mt-8 text-black dark:text-white text-center'>{children}</h2>
   )
 }

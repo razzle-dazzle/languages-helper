@@ -1,7 +1,6 @@
 import { Verbs } from "@/data/verbs.model";
-import { PronounsPersonalShortCAT } from "@/data/pronouns";
 import { clsx } from "clsx";
-import Link from "next/link";
+import { getPronoun } from '@/data/utils';
 
 type VerbBlockProps = {
   /** zero-indexed column */
@@ -16,29 +15,13 @@ type VerbBlockProps = {
   showTenseTitle?: boolean;
 };
 function VerbBlock({ row = 0, forms, tense, tenseTitle = '', showInfinitiveTitle, showTenseTitle }: VerbBlockProps) {
-  function getPronoun(index: number): string {
-    switch (index) {
-      case 0:
-        return PronounsPersonalShortCAT.S1;
-      case 1:
-        return PronounsPersonalShortCAT.S2;
-      case 2:
-        return PronounsPersonalShortCAT.S3;
-      case 3:
-        return PronounsPersonalShortCAT.P1;
-      case 4:
-        return PronounsPersonalShortCAT.P2;
-      case 5:
-        return PronounsPersonalShortCAT.P3;
-      default:
-        return "";
-    }
-  }
+  
   return (
     <article
         className={clsx(
-          "text-black dark:text-black",
-          row ? "bg-slate-100" : "",
+          "text-black dark:text-white",
+          row ? "lg:bg-slate-100 dark:lg:bg-slate-900" : "",
+          
           "p-6 py-8"
         )}
       >
@@ -48,7 +31,7 @@ function VerbBlock({ row = 0, forms, tense, tenseTitle = '', showInfinitiveTitle
             {forms.infinitive.ca}
           </h2>
           
-          <h3 className="text-lg italic text-center text-gray-700 mb-1.5 leading-normal">
+          <h3 className="text-md italic text-center text-gray-700 dark:text-slate-300 mb-1.5 leading-normal">
             ({forms.infinitive.en})
           </h3></>
 
@@ -67,7 +50,7 @@ function VerbBlock({ row = 0, forms, tense, tenseTitle = '', showInfinitiveTitle
               <div key={index}>
                 <div
                   className={clsx(
-                    "flex flex-row gap-0.5",
+                    "flex flex-row gap-1 items-center",
                     index % 2 === 0 ? "justify-end pr-2" : ""
                   )}
                 >

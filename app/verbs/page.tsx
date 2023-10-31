@@ -13,9 +13,12 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <h1 className='text-5xl font-semibold text-black text-center mt-12'>Catalan Verbs</h1>
+      <h1 className='text-5xl font-semibold text-black dark:text-white text-center mt-12'>Catalan Verbs</h1>
+      <div className='text-black my-2'>
+        <Link className='text-xl text-black dark:text-white' href={'/'}>&laquo; Back</Link>
+      </div>
       <div className="max-w-[1800px] w-full border shadow-lg my-12">
-        <div className="grid grid-cols-4 justify-center align-middle">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center align-middle">
           {data.map((verb, key) => {
             const col = key % 4;
             const row = key % (4 * 2) >= 4 ? 1 : 0;
