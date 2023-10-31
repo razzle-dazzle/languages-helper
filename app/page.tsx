@@ -6,9 +6,9 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
       </div> */}
-      <h1>Learn Catalan - Language Resource</h1>
+      <h1 className='text-4xl font-bold'>Learn Catalan - Language Resources</h1>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-8">
         <Link href={"/verbs"}>
           <h2 className={`mb-3 text-2xl font-semibold`}>
             Verbs{" "}
@@ -33,39 +33,67 @@ export default function Home() {
           </p>
         </Link>
 
-        {/* <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={"/pronouns"}>
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
+            Pronouns{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
+            All the pronouns
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={"/adverbs"}>
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
+            Adverbs{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            A list of all conjunctive adverbs
           </p>
-        </a> */}
+        </Link>
+
+        <Link href={"/phrases"}>
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Phrases{' '}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            A list of common phrases
+          </p>
+        </Link>
+
+        <Link href={"/idioms"}>
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Idioms{' '}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            A list of idioms
+          </p>
+        </Link>
+
+        <Link href={"/subjunctive"}>
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Subjunctive{' '}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            Subjunctive Verb Forms
+          </p>
+        </Link>
+
+        
       </div>
     </main>
   );

@@ -9,4 +9,13 @@ export type PronounsMap = {
   P3: string;
   /** Plural formal */
   PF: string;
-}
+};
+
+export type PronounTypes =
+  | "personal"
+  | "direct"
+  | "indirect"
+  | "reflexive"
+  | "prepositional"
+  | "possessive"
+  | "possessiveAdjective";
