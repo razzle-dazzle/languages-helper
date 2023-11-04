@@ -1,6 +1,6 @@
 import { Verbs } from "@/data/verbs.model";
 import { clsx } from "clsx";
-import { getPronoun } from '@/data/utils';
+import { getPersonalPronoun } from '@/data/utils';
 
 type VerbBlockProps = {
   /** zero-indexed column */
@@ -61,7 +61,7 @@ function VerbBlock({ row = 0, forms, tense, tenseTitle = '', showInfinitiveTitle
                       "font-light"
                     )}
                   >
-                    {getPronoun(index).toLowerCase()}
+                    {getPersonalPronoun(index).toLowerCase()}
                   </div>
                   <div className="text-red-700 font-semibold whitespace-nowrap">
                     {item.toLowerCase()}

@@ -8,7 +8,7 @@ export default function Home() {
       </div> */}
       <h1 className='text-4xl font-bold'>Learn Catalan - Language Resources</h1>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-8">
+      <div className="mb-48 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-8">
         <Link href={"/verbs"}>
           <h2 className={`mb-3 text-2xl font-semibold`}>
             Verbs{" "}
@@ -21,18 +21,6 @@ export default function Home() {
           </p>
         </Link>
 
-        <Link href={"/adjectives"}>
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Adjectives{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            A list of all the adjectives
-          </p>
-        </Link>
-
         <Link href={"/pronouns"}>
           <h2 className={`mb-3 text-2xl font-semibold`}>
             Pronouns{' '}
@@ -42,6 +30,18 @@ export default function Home() {
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             All the pronouns
+          </p>
+        </Link>
+
+        <Link href={"/adjectives"}>
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Adjectives{' '}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            A list of all the adjectives
           </p>
         </Link>
 

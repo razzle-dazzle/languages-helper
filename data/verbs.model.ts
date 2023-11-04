@@ -31,3 +31,13 @@ export type Verbs = {
   }
 };
 
+/**
+ * First: ends in 'ar' or 'ar-se'
+ * Second: ends in 'er' or 're' or "re's" or "ur" (fer, caure, distreure's, dur)
+ * Third: ends in 'ir' or 'ir-se' or 'lir' (existir, excel·lir, divertir-se)
+ */
+export type VerbForm = 'first' | 'second' | 'third'
+/**
+ * More types here: https://www.verbs.cat/en/categories/2-second-conjugation.html
+ */
+export type VerbType = 'pure' | 'inchoative' | 'pronominal' | 'regular' | 'irregular';

@@ -2,6 +2,7 @@ import myVerbsService from "@/services/verbs.service";
 import VerbBlock from '../VerbBlock';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
+import { capitalize } from '@/data/utils';
 
 // export async function generateStaticParams() {
 //   const items = myVerbsService.getProjects();
@@ -14,6 +15,7 @@ export default function Page({ params }: { params: { verb: string; } }) {
   const { verb: _verb } = params;
   const data = myVerbsService.getVerbById(_verb);
   const gridClasses = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center align-middle";
+  const verbForm = myVerbsService.getVerbForm(data?.forms.infinitive.ca ?? '');
   
   if (!data) {
     return <NotFound></NotFound>
@@ -21,7 +23,7 @@ export default function Page({ params }: { params: { verb: string; } }) {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <h1 className='text-5xl font-semibold text-black dark:text-white text-center mt-12'>Verb: {data.forms.infinitive.ca}, {data.forms.infinitive.es}, {data.forms.infinitive.en}</h1>
-      
+      <p className='text-lg my-4 mb-8'>Verb form: {capitalize(verbForm ?? '')}</p>
       <div className="max-w-[1800px] w-full border shadow-lg my-12">
 
         <Title>Indicative Mood</Title>
