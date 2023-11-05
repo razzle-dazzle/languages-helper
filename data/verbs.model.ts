@@ -41,3 +41,4 @@ export type VerbForm = 'first' | 'second' | 'third'
  * More types here: https://www.verbs.cat/en/categories/2-second-conjugation.html
  */
 export type VerbType = 'pure' | 'inchoative' | 'pronominal' | 'regular' | 'irregular';
+

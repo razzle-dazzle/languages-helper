@@ -17,6 +17,9 @@ export default function Page() {
       <div className='text-black my-2'>
         <Link className='text-xl text-black dark:text-white' href={'/'}>&laquo; Back</Link>
       </div>
+      <div className='text-black my-2'>
+        <Link className='text-xl text-black dark:text-white' href={'/verbs/tenses'}>How verb tenses work</Link>
+      </div>
       <div className="max-w-[1800px] w-full border shadow-lg my-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center align-middle">
           {data.map((verb, key) => {

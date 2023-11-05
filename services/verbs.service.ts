@@ -1,3 +1,4 @@
+import { tenses } from '@/data/tenses';
 import { catalanVerbs } from '@/data/verbs-catalan';
 import { VerbForm, Verbs } from '@/data/verbs.model';
 
@@ -8,6 +9,10 @@ class VerbsService {
   }
   getVerbById(id: Verbs['id']): Verbs | undefined {
     return catalanVerbs.find(v => v.id === id)
+  }
+
+  getTenses(): Verbs {
+    return tenses;
   }
 
   /**
