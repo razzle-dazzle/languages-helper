@@ -1,9 +1,9 @@
 import { pronounsCA, pronounsES, pronounsEN } from "@/data/pronouns";
-import { PronounTypes } from "@/data/pronouns.model";
+import { PronounTypes, PronounsMap } from "@/data/pronouns.model";
 import { Language } from "@/data/types";
 
 class PronounsService {
-  getList(lang: Language) {
+  getList(lang: Language): Record<PronounTypes, PronounsMap> {
     switch (lang) {
       case "CA":
         return pronounsCA;
